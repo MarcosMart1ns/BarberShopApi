@@ -46,4 +46,13 @@ public class UserDTO implements Serializable {
     public void setProvider(boolean provider) {
         this.provider = provider;
     }
+
+    public String toString(){
+        return "{\n" +
+                "\t\"name\": \"" +name +"\",\n" +
+                "\t\"email\":\""+ email +"\",\n" +
+                "\t\"password\":\""+ password + "\",\n" +
+                "\t\"provider\": " + provider +
+                "}";
+    }
 }

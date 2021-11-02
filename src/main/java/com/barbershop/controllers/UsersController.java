@@ -1,6 +1,8 @@
 package com.barbershop.controllers;
 
 import com.barbershop.entity.User;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,8 +18,8 @@ public class UsersController {
 
     @PostMapping
     @ResponseBody
-    public User createUser(@RequestBody User user){
-        return user;
+    public ResponseEntity<User> createUser(@RequestBody User user){
+        return new ResponseEntity<User>(user, HttpStatus.CREATED);
     }
 
     @PutMapping

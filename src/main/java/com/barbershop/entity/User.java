@@ -16,12 +16,15 @@ public class User {
     private String password;
     private boolean provider;
 
-    public User(Long id, String name, String email, String password, boolean provider) {
-        this.id = id;
+    public User(String name, String email, String password, boolean provider) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.provider = provider;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {
