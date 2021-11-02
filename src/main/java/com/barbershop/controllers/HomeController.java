@@ -5,11 +5,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class UserController {
+public class HomeController {
 
-    @GetMapping("/users")
+    @GetMapping("/")
     @ResponseBody
     public String getUsers(){
-        return "deu bom";
+        return "Tudo ok";
     }
+
 }
