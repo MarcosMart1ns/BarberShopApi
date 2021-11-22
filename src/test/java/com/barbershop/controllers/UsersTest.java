@@ -1,7 +1,6 @@
 package com.barbershop.controllers;
 
 import com.barbershop.DTO.UserDTO;
-import com.barbershop.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +25,22 @@ public class UsersTest {
     @Test
     public void testCreateUsers() throws Exception {
         URI uri = new URI("/users");
-        UserDTO user = new UserDTO("Maria","maria@hotmail.com","098a8i-diasd8-",false);
+        UserDTO user = new UserDTO("Maria", "maria@hotmail.com", "098a8i-diasd8-", false);
 
+        assertPostRequest(
+                uri,
+                user.toString(),
+                user.toString()
+        );
+
+    }
+
+    private void assertPostRequest(URI uri, String bodySent, String bodyExpected) throws Exception {
         mockMvc.perform(
                 MockMvcRequestBuilders
                         .post(uri)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(user.toString())
+                        .content(bodySent)
         ).andExpect(
                 MockMvcResultMatchers
                         .status()
@@ -40,7 +48,7 @@ public class UsersTest {
         ).andExpect(
                 MockMvcResultMatchers
                         .content()
-                        .json(user.toString())
+                        .json(bodyExpected)
         );
     }
 }
