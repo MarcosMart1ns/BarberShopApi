@@ -1,6 +1,8 @@
 package com.barbershop.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -13,16 +15,16 @@ public class ControllerTestHelper {
     @Autowired
     private MockMvc mockMvc;
 
-    public void assertPostRequest(URI uri, String bodySent, String bodyExpected) throws Exception {
+    public void assertRequest(URI uri, HttpMethod httpMethod, String bodySent, String bodyExpected, HttpStatus statusExpected) throws Exception {
         mockMvc.perform(
                 MockMvcRequestBuilders
-                        .post(uri)
+                        .request(httpMethod, uri)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(bodySent)
         ).andExpect(
                 MockMvcResultMatchers
                         .status()
-                        .is(201)
+                        .is(statusExpected.value())
         ).andExpect(
                 MockMvcResultMatchers
                         .content()
