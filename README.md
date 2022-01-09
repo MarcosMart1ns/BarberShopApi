@@ -5,7 +5,7 @@ Uma api REST que disponibiliza serviços de agendamento para uma barbearia.
 ### Planejamento
 
 #### v0.1.0
- - [ ] Criação de usuário
+ - [x] Criação de usuário
  - [ ] Login de usuário
  - [ ] Atualização de dados de usuário
  - [ ] Testes de integração
