@@ -16,6 +16,10 @@ public class User {
     private String password;
     private boolean provider;
 
+    public User(){
+
+    }
+
     public User(String name, String email, String password, boolean provider) {
         this.name = name;
         this.email = email;

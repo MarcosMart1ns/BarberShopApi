@@ -16,4 +16,9 @@ public class UserBUImpl implements UserBU{
         return userRepository.save(user);
     }
 
+    @Override
+    public User getUserbyEmail(User user) {
+        return userRepository.findByEmail(user.getEmail());
+    }
+
 }

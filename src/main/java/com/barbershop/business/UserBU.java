@@ -8,4 +8,6 @@ public interface UserBU {
 
     User createUser(User user);
 
+    User getUserbyEmail(User user);
+
 }
