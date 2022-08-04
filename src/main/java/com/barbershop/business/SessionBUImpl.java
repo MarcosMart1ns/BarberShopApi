@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class SessionBUImpl implements SessionBU {
 
     @Autowired
-    UserBU userBU;
+    private UserBU userBU;
 
     @Override
     public User createSession(User user) throws Exception {

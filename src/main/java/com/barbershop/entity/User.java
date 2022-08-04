@@ -1,5 +1,7 @@
 package com.barbershop.entity;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,9 +13,16 @@ public class User {
     @GeneratedValue
     private Long id;
 
+    @NotNull
     private String name;
+
+    @NotNull
     private String email;
+
+    @NotNull
     private String password;
+
+    @NotNull
     private boolean provider;
 
     public User(){
