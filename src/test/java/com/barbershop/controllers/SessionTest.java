@@ -29,7 +29,7 @@ public class SessionTest extends ControllerTestHelper{
 
         UserDTO user = new UserDTO("","maria@hotmail.com", "098a8i-diasd8-",false);
 
-        userBU.createUser(new UserMapper().toObject(user));
+        userBU.createUser(UserMapper.toObject(user));
 
         assertRequest(
                 uri,

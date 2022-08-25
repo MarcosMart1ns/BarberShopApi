@@ -27,7 +27,7 @@ public class UsersController {
     @ResponseBody
     public ResponseEntity<User> createUser(@RequestBody UserDTO userDTO){
 
-        User userCreated = userBU.createUser(new UserMapper().toObject(userDTO));
+        User userCreated = userBU.createUser(UserMapper.toObject(userDTO));
 
         return new ResponseEntity<User>(userCreated, HttpStatus.CREATED);
     }

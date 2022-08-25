@@ -21,7 +21,7 @@ public class Session {
     public ResponseEntity createSession(@RequestBody UserDTO userDTO){
 
         try{
-            User user = sessionBU.createSession(new UserMapper().toObject(userDTO));
+            User user = sessionBU.createSession(UserMapper.toObject(userDTO));
             return new ResponseEntity(user, HttpStatus.CREATED);
         }catch (Exception e){
             return new ResponseEntity(e.getMessage(),HttpStatus.UNAUTHORIZED);

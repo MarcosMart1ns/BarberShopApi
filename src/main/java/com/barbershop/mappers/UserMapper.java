@@ -5,7 +5,7 @@ import com.barbershop.entity.User;
 
 public class UserMapper  {
 
-    public UserDTO toDTO(User user){
+    public static UserDTO toDTO(User user){
 
         return new UserDTO(
                 user.getName(),
@@ -15,7 +15,7 @@ public class UserMapper  {
         );
     }
 
-    public User toObject(UserDTO userDTO){
+    public static User toObject(UserDTO userDTO){
         return new User(
                 userDTO.getName(),
                 userDTO.getEmail(),
