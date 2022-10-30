@@ -32,7 +32,7 @@ public class UsersController {
         return new ResponseEntity<User>(userCreated, HttpStatus.CREATED);
     }
 
-    @PutMapping
+    @PatchMapping
     @ResponseBody
     public User updateUser(@RequestBody User user){
         return user;

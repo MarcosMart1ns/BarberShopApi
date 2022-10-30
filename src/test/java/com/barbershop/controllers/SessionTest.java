@@ -15,9 +15,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.net.URI;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
 public class SessionTest extends ControllerTestHelper{
 
     @Autowired

@@ -1,24 +1,23 @@
 package com.barbershop.controllers;
 
 import com.barbershop.DTO.UserDTO;
+import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.net.URI;
+import java.net.URISyntaxException;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc
+
 public class UsersTest extends ControllerTestHelper {
+    @Before
+    public void beforeAll() throws URISyntaxException {
+        uri = new URI("/users");
+    }
 
     @Test
     public void testCreateUser() throws Exception {
-        URI uri = new URI("/users");
 
         UserDTO user = new UserDTO("Maria", "maria@hotmail.com", "098a8i-diasd8-", false);
 
@@ -33,13 +32,31 @@ public class UsersTest extends ControllerTestHelper {
     }
 
     @Test
-    public void testUpdateUser(){
+    public void testUpdateUser() throws Exception {
+        UserDTO user = createAnUser();
 
+        doRequest(uri,HttpMethod.POST,user.toString());
+
+        assertRequest(
+                uri,
+                HttpMethod.PATCH,
+                user.toString(),
+                user.toString(),
+                HttpStatus.OK //Quando implementar update users, alterar para experar 201- Created
+        );
     }
 
     @Test
     public void listProviders(){
 
+    }
+
+    public UserDTO createAnUser(){
+        return new UserDTO(
+                "Maria",
+                "maria@hotmail.com",
+                "098a8i-diasd8-",
+                false);
     }
 
 }
