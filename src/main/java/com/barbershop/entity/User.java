@@ -1,10 +1,13 @@
 package com.barbershop.entity;
 
+//TODO: adicionar spring validator starter
+
 import com.sun.istack.NotNull;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class User {
@@ -23,17 +26,16 @@ public class User {
     private String password;
 
     @NotNull
-    private boolean provider;
+    @OneToOne
+    private Avatar avatar;
 
-    public User(){
-
-    }
-
-    public User(String name, String email, String password, boolean provider) {
+    public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.provider = provider;
+    }
+
+    public User() {
     }
 
     public Long getId() {
@@ -64,11 +66,11 @@ public class User {
         this.password = password;
     }
 
-    public boolean isProvider() {
-        return provider;
+    public Avatar getAvatar() {
+        return avatar;
     }
 
-    public void setProvider(boolean provider) {
-        this.provider = provider;
+    public void setAvatar(Avatar avatar) {
+        this.avatar = avatar;
     }
 }

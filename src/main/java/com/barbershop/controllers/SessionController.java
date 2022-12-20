@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/session")
-public class Session {
+public class SessionController {
 
     @Autowired
     SessionBU sessionBU;
