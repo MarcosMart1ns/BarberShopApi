@@ -18,7 +18,7 @@ public class Appointment {
     private Date date;
 
     @ManyToOne
-    private Customer customer;
+    private User customer;
 
     @ManyToOne
     private Provider provider;

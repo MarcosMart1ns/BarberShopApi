@@ -1,20 +1,19 @@
 package com.barbershop.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import java.util.List;
+import javax.persistence.Table;
 
+
+@Table(name = "USER")
 @Entity
 public class Provider extends User {
 
-    @OneToMany(mappedBy = "provider")
-    private List<Appointment> appointments;
-
-    public List<Appointment> getAppointments() {
-        return appointments;
+    public Provider(String name, String email, String password) {
+        super(name, email, password);
+        this.provider = true;
     }
 
-    public void setAppointments(List<Appointment> appointments) {
-        this.appointments = appointments;
+    public Provider() {
+        this.provider = true;
     }
 }

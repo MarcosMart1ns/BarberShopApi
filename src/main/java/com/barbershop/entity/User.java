@@ -7,7 +7,9 @@ import com.sun.istack.NotNull;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import java.util.List;
 
 @Entity
 public class User {
@@ -28,6 +30,12 @@ public class User {
     @NotNull
     @OneToOne
     private Avatar avatar;
+
+    @OneToMany
+    private List<Appointment> appointments;
+
+    @NotNull
+    boolean provider = false;
 
     public User(String name, String email, String password) {
         this.name = name;
@@ -72,5 +80,13 @@ public class User {
 
     public void setAvatar(Avatar avatar) {
         this.avatar = avatar;
+    }
+
+    public List<Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public void setAppointments(List<Appointment> appointments) {
+        this.appointments = appointments;
     }
 }
