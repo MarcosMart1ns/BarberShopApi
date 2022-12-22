@@ -1,4 +1,4 @@
-package com.barbershop.entity;
+package com.barbershop.entities;
 
 //TODO: adicionar spring validator starter
 
@@ -27,7 +27,6 @@ public class User {
     @NotNull
     private String password;
 
-    @NotNull
     @OneToOne
     private Avatar avatar;
 
@@ -37,11 +36,6 @@ public class User {
     @NotNull
     boolean provider = false;
 
-    public User(String name, String email, String password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
 
     public User() {
     }

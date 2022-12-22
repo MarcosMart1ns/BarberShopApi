@@ -1,4 +1,4 @@
-package com.barbershop.entity;
+package com.barbershop.entities;
 
 import com.sun.istack.NotNull;
 

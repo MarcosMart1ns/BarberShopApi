@@ -1,6 +1,6 @@
 package com.barbershop.repository;
 
-import com.barbershop.entity.User;
+import com.barbershop.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

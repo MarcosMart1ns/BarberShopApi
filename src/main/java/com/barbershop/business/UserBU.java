@@ -1,6 +1,6 @@
 package com.barbershop.business;
 
-import com.barbershop.entity.User;
+import com.barbershop.entities.User;
 import org.springframework.stereotype.Service;
 
 @Service
