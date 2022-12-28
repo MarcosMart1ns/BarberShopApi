@@ -3,7 +3,9 @@ package com.barbershop.entities;
 //TODO: adicionar spring validator starter
 
 import com.sun.istack.NotNull;
+import org.springframework.lang.Nullable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -27,7 +29,8 @@ public class User {
     @NotNull
     private String password;
 
-    @OneToOne
+    @OneToOne(cascade= CascadeType.PERSIST)
+    @Nullable
     private Avatar avatar;
 
     @OneToMany
@@ -82,5 +85,9 @@ public class User {
 
     public void setAppointments(List<Appointment> appointments) {
         this.appointments = appointments;
+    }
+
+    public boolean isProvider() {
+        return provider;
     }
 }

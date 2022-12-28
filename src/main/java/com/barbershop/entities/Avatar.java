@@ -13,10 +13,8 @@ public class Avatar {
     @GeneratedValue
     private long id;
 
-    @NotNull
     private String fileName;
 
-    @NotNull
     private String path;
 
     public long getId() {

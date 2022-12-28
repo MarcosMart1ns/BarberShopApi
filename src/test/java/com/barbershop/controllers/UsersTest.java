@@ -1,6 +1,6 @@
 package com.barbershop.controllers;
 
-import com.barbershop.DTO.UserDTO;
+import com.barbershop.dto.UserDTO;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.HttpMethod;
@@ -19,13 +19,13 @@ public class UsersTest extends ControllerTestHelper {
     @Test
     public void testCreateUser() throws Exception {
 
-        UserDTO user = new UserDTO("Maria", "maria@hotmail.com", "098a8i-diasd8-", false);
+        UserDTO user = createAnUserWithoutAvatar();
 
         assertRequest(
                 uri,
                 HttpMethod.POST,
-                user.toString(),
-                user.toString(),
+                user.toJson(),
+                user.toJson(),
                 HttpStatus.CREATED
         );
 
@@ -33,15 +33,15 @@ public class UsersTest extends ControllerTestHelper {
 
     @Test
     public void testUpdateUser() throws Exception {
-        UserDTO user = createAnUser();
+        UserDTO user = createAnUserWithoutAvatar();
 
-        doRequest(uri,HttpMethod.POST,user.toString());
+        doRequest(uri,HttpMethod.POST,user.toJson());
 
         assertRequest(
                 uri,
                 HttpMethod.PATCH,
-                user.toString(),
-                user.toString(),
+                user.toJson(),
+                user.toJson(),
                 HttpStatus.OK //Quando implementar update users, alterar para experar 201- Created
         );
     }
@@ -51,12 +51,5 @@ public class UsersTest extends ControllerTestHelper {
 
     }
 
-    public UserDTO createAnUser(){
-        return new UserDTO(
-                "Maria",
-                "maria@hotmail.com",
-                "098a8i-diasd8-",
-                false);
-    }
 
 }
