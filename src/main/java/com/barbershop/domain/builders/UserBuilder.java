@@ -35,6 +35,11 @@ public class UserBuilder {
         return this;
     }
 
+    public UserBuilder isProvider(boolean isProvider){
+        user.setProvider(isProvider);
+        return this;
+    }
+
     public User build(){
         return user;
     }

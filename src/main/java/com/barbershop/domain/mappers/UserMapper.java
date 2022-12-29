@@ -8,6 +8,10 @@ import com.barbershop.domain.entities.User;
 
 public class UserMapper  {
 
+    private UserMapper(){
+        throw new IllegalArgumentException("Classe Utilitária");
+    }
+
     public static UserDTO toDTO(User user){
 
         AvatarDTO avatar= null;
@@ -16,13 +20,15 @@ public class UserMapper  {
             avatar = AvatarMapper.toDTO(user.getAvatar());
         }
 
-        return new UserDTO(
-                user.getName(),
-                user.getEmail(),
-                user.getPassword(),
-                avatar,
-                user.getAppointments()
-        );
+        UserDTO userDTO = new UserDTO();
+        userDTO.setName(user.getName());
+        userDTO.setEmail(user.getEmail());
+        userDTO.setPassword( user.getPassword());
+        userDTO.setProvider(user.isProvider());
+        userDTO.setAppointments(user.getAppointments());
+        userDTO.setAvatar(avatar);
+
+       return  userDTO;
     }
 
     public static User toObject(UserDTO userDTO){
@@ -37,6 +43,7 @@ public class UserMapper  {
                 .email(userDTO.getEmail())
                 .appointments(userDTO.getAppointments())
                 .avatar(avatar)
+                .isProvider(userDTO.isProvider())
                 .password(userDTO.getPassword())
                 .build();
     }

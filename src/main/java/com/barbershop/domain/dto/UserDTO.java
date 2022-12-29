@@ -13,14 +13,6 @@ public class UserDTO implements Serializable {
     private List<Appointment> appointments;
     private boolean provider = false;
 
-    public UserDTO(String name, String email, String password,AvatarDTO avatar, List<Appointment> appointments) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.appointments = appointments;
-        this.avatar = avatar;
-    }
-
     public String getName() {
         return name;
     }

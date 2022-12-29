@@ -90,4 +90,8 @@ public class User {
     public boolean isProvider() {
         return provider;
     }
+
+    public void setProvider(boolean provider) {
+        this.provider = provider;
+    }
 }

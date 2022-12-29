@@ -5,12 +5,19 @@ import com.barbershop.domain.dto.AvatarDTO;
 import com.barbershop.domain.entities.Avatar;
 
 public class AvatarMapper {
+
+    private AvatarMapper(){
+        throw new IllegalArgumentException("Classe utilitária");
+    }
+
     public static AvatarDTO toDTO(Avatar avatar){
-        return new AvatarDTO(
-          avatar .getId(),
-          avatar.getFileName(),
-          avatar.getPath()
-        );
+
+        AvatarDTO avatarDTO = new AvatarDTO();
+        avatarDTO.setId(avatar.getId());
+        avatarDTO.setFilename(avatar.getFileName());
+        avatarDTO.setPath(avatarDTO.getPath());
+
+        return avatarDTO;
     }
 
     public static Avatar toObject(AvatarDTO avatarDTO){

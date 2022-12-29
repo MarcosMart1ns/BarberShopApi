@@ -4,15 +4,6 @@ import java.io.Serializable;
 
 public class AvatarDTO implements Serializable {
 
-    public AvatarDTO(long id, String filename, String path) {
-        this.id = id;
-        this.filename = filename;
-        this.path = path;
-    }
-
-    public AvatarDTO() {
-    }
-
     private long id;
 
     private String filename;
