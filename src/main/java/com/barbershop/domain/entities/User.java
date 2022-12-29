@@ -1,4 +1,4 @@
-package com.barbershop.entities;
+package com.barbershop.domain.entities;
 
 //TODO: adicionar spring validator starter
 

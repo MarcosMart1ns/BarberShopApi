@@ -1,6 +1,6 @@
-package com.barbershop.builders;
+package com.barbershop.domain.builders;
 
-import com.barbershop.entities.Avatar;
+import com.barbershop.domain.entities.Avatar;
 
 public class AvatarBuilder {
 

@@ -1,4 +1,4 @@
-package com.barbershop.entities;
+package com.barbershop.domain.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;

@@ -1,6 +1,6 @@
 package com.barbershop.controllers;
 
-import com.barbershop.dto.UserDTO;
+import com.barbershop.domain.dto.UserDTO;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.http.HttpMethod;

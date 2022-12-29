@@ -1,12 +1,11 @@
 package com.barbershop.controllers;
 
 import com.barbershop.BarbershopApplicationTests;
-import com.barbershop.builders.UserBuilder;
-import com.barbershop.business.AvatarBU;
+import com.barbershop.domain.builders.UserBuilder;
 import com.barbershop.business.UserBU;
-import com.barbershop.dto.UserDTO;
-import com.barbershop.entities.User;
-import com.barbershop.mappers.UserMapper;
+import com.barbershop.domain.dto.UserDTO;
+import com.barbershop.domain.entities.User;
+import com.barbershop.domain.mappers.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;

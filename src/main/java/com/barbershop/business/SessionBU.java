@@ -1,6 +1,6 @@
 package com.barbershop.business;
 
-import com.barbershop.entities.User;
+import com.barbershop.domain.entities.User;
 
 public interface SessionBU {
 

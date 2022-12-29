@@ -1,10 +1,10 @@
-package com.barbershop.mappers;
+package com.barbershop.domain.mappers;
 
-import com.barbershop.builders.UserBuilder;
-import com.barbershop.dto.AvatarDTO;
-import com.barbershop.dto.UserDTO;
-import com.barbershop.entities.Avatar;
-import com.barbershop.entities.User;
+import com.barbershop.domain.builders.UserBuilder;
+import com.barbershop.domain.dto.AvatarDTO;
+import com.barbershop.domain.dto.UserDTO;
+import com.barbershop.domain.entities.Avatar;
+import com.barbershop.domain.entities.User;
 
 public class UserMapper  {
 

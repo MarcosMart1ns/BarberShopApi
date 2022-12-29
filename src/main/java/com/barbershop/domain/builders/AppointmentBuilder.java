@@ -1,8 +1,8 @@
-package com.barbershop.builders;
+package com.barbershop.domain.builders;
 
-import com.barbershop.entities.Appointment;
-import com.barbershop.entities.Provider;
-import com.barbershop.entities.User;
+import com.barbershop.domain.entities.Appointment;
+import com.barbershop.domain.entities.Provider;
+import com.barbershop.domain.entities.User;
 
 import java.util.Date;
 

@@ -1,9 +1,9 @@
 package com.barbershop.controllers;
 
-import com.barbershop.dto.UserDTO;
+import com.barbershop.domain.dto.UserDTO;
 import com.barbershop.business.UserBU;
-import com.barbershop.entities.User;
-import com.barbershop.mappers.UserMapper;
+import com.barbershop.domain.entities.User;
+import com.barbershop.domain.mappers.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

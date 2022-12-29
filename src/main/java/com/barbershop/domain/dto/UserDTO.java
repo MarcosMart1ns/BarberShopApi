@@ -1,6 +1,6 @@
-package com.barbershop.dto;
+package com.barbershop.domain.dto;
 
-import com.barbershop.entities.Appointment;
+import com.barbershop.domain.entities.Appointment;
 
 import java.io.Serializable;
 import java.util.List;

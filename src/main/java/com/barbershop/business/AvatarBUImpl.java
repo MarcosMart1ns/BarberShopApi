@@ -1,6 +1,6 @@
 package com.barbershop.business;
 
-import com.barbershop.entities.Avatar;
+import com.barbershop.domain.entities.Avatar;
 import com.barbershop.repository.AvatarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
-package com.barbershop.mappers;
+package com.barbershop.domain.mappers;
 
-import com.barbershop.builders.AvatarBuilder;
-import com.barbershop.dto.AvatarDTO;
-import com.barbershop.entities.Avatar;
+import com.barbershop.domain.builders.AvatarBuilder;
+import com.barbershop.domain.dto.AvatarDTO;
+import com.barbershop.domain.entities.Avatar;
 
 public class AvatarMapper {
     public static AvatarDTO toDTO(Avatar avatar){

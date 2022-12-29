@@ -1,4 +1,4 @@
-package com.barbershop.dto;
+package com.barbershop.domain.dto;
 
 import java.io.Serializable;
 

@@ -1,6 +1,6 @@
 package com.barbershop.business;
 
-import com.barbershop.entities.Avatar;
+import com.barbershop.domain.entities.Avatar;
 
 public interface AvatarBU {
 
