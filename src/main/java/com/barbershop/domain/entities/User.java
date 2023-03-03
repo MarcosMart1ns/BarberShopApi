@@ -3,6 +3,8 @@ package com.barbershop.domain.entities;
 //TODO: adicionar spring validator starter
 
 import com.sun.istack.NotNull;
+import lombok.Builder;
+import lombok.Data;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.CascadeType;
@@ -14,6 +16,8 @@ import javax.persistence.OneToOne;
 import java.util.List;
 
 @Entity
+@Data
+@Builder
 public class User {
 
     @Id
@@ -43,55 +47,4 @@ public class User {
     public User() {
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Avatar getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(Avatar avatar) {
-        this.avatar = avatar;
-    }
-
-    public List<Appointment> getAppointments() {
-        return appointments;
-    }
-
-    public void setAppointments(List<Appointment> appointments) {
-        this.appointments = appointments;
-    }
-
-    public boolean isProvider() {
-        return provider;
-    }
-
-    public void setProvider(boolean provider) {
-        this.provider = provider;
-    }
 }

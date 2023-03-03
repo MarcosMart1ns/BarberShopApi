@@ -1,28 +1,25 @@
 package com.barbershop.domain.mappers;
 
-import com.barbershop.domain.builders.AvatarBuilder;
 import com.barbershop.domain.dto.AvatarDTO;
 import com.barbershop.domain.entities.Avatar;
 
 public class AvatarMapper {
 
     private AvatarMapper(){
-        throw new IllegalArgumentException("Classe utilitária");
+        throw new IllegalArgumentException("Utility Class");
     }
 
     public static AvatarDTO toDTO(Avatar avatar){
-
-        AvatarDTO avatarDTO = new AvatarDTO();
-        avatarDTO.setId(avatar.getId());
-        avatarDTO.setFilename(avatar.getFileName());
-        avatarDTO.setPath(avatarDTO.getPath());
-
-        return avatarDTO;
+        return AvatarDTO.builder()
+                .id(avatar.getId())
+                .filename(avatar.getFileName())
+                .path(avatar.getPath())
+                .build();
     }
 
     public static Avatar toObject(AvatarDTO avatarDTO){
-        return new AvatarBuilder()
-                .filename(avatarDTO.getFilename())
+        return Avatar.builder()
+                .fileName(avatarDTO.getFilename())
                 .path(avatarDTO.getPath())
                 .build();
     }

@@ -1,15 +1,20 @@
 package com.barbershop.domain.entities;
 
 import com.sun.istack.NotNull;
+import lombok.Builder;
+import lombok.Data;
 
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Appointment {
+@Data
+@Builder
+public class Appointment implements Serializable {
 
     @Id
     private Long id;
@@ -23,35 +28,7 @@ public class Appointment {
     @ManyToOne
     private Provider provider;
 
-    public Long getId() {
-        return id;
-    }
+    public Appointment() {
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public User getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(User customer) {
-        this.customer = customer;
-    }
-
-    public Provider getProvider() {
-        return provider;
-    }
-
-    public void setProvider(Provider provider) {
-        this.provider = provider;
     }
 }

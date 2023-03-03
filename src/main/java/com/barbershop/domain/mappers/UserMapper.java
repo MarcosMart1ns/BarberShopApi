@@ -1,6 +1,5 @@
 package com.barbershop.domain.mappers;
 
-import com.barbershop.domain.builders.UserBuilder;
 import com.barbershop.domain.dto.AvatarDTO;
 import com.barbershop.domain.dto.UserDTO;
 import com.barbershop.domain.entities.Avatar;
@@ -20,15 +19,14 @@ public class UserMapper  {
             avatar = AvatarMapper.toDTO(user.getAvatar());
         }
 
-        UserDTO userDTO = new UserDTO();
-        userDTO.setName(user.getName());
-        userDTO.setEmail(user.getEmail());
-        userDTO.setPassword( user.getPassword());
-        userDTO.setProvider(user.isProvider());
-        userDTO.setAppointments(user.getAppointments());
-        userDTO.setAvatar(avatar);
-
-       return  userDTO;
+       return UserDTO.builder()
+                .name(user.getName())
+                .email(user.getEmail())
+                .password( user.getPassword())
+                .provider(user.isProvider())
+                .appointments(user.getAppointments())
+                .avatar(avatar)
+                .build();
     }
 
     public static User toObject(UserDTO userDTO){
@@ -38,12 +36,12 @@ public class UserMapper  {
             avatar = AvatarMapper.toObject(userDTO.getAvatar());
         }
 
-        return new UserBuilder()
+        return User.builder()
                 .name(userDTO.getName())
                 .email(userDTO.getEmail())
                 .appointments(userDTO.getAppointments())
                 .avatar(avatar)
-                .isProvider(userDTO.isProvider())
+                .provider(userDTO.isProvider())
                 .password(userDTO.getPassword())
                 .build();
     }

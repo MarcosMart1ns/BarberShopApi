@@ -1,12 +1,15 @@
 package com.barbershop.domain.entities;
 
-import com.sun.istack.NotNull;
+import lombok.Builder;
+import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
+@Builder
+@Data
 public class Avatar {
 
     @Id
@@ -17,27 +20,6 @@ public class Avatar {
 
     private String path;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
+    public Avatar() {
     }
 }

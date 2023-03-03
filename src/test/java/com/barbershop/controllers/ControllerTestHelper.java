@@ -1,7 +1,6 @@
 package com.barbershop.controllers;
 
 import com.barbershop.BarbershopApplicationTests;
-import com.barbershop.domain.builders.UserBuilder;
 import com.barbershop.business.UserBU;
 import com.barbershop.domain.dto.UserDTO;
 import com.barbershop.domain.entities.User;
@@ -18,7 +17,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import java.net.URI;
 import java.util.Collections;
 
-public class ControllerTestHelper extends BarbershopApplicationTests {
+class ControllerTestHelper extends BarbershopApplicationTests {
 
     @Autowired
     private MockMvc mockMvc;
@@ -74,7 +73,7 @@ public class ControllerTestHelper extends BarbershopApplicationTests {
 
     public UserDTO createAnUserWithoutAvatar(){
 
-        User user =  new UserBuilder()
+        User user = User.builder()
                 .name("Maria")
                 .email("maria@hotmail.com")
                 .password("098a8i-diasd8-")

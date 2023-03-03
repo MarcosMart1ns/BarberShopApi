@@ -7,7 +7,8 @@ import javax.persistence.Table;
 @Table(name = "USER")
 @Entity
 public class Provider extends User {
+
+    private final boolean provider = true;
     public Provider() {
-        this.provider = true;
     }
 }

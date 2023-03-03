@@ -1,65 +1,21 @@
 package com.barbershop.domain.dto;
 
 import com.barbershop.domain.entities.Appointment;
+import lombok.Builder;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class UserDTO implements Serializable {
+@Data
+@Builder
+public class UserDTO{
     private String name;
     private String email;
     private String password;
     private AvatarDTO avatar;
-    private List<Appointment> appointments;
+    private List<AppointmentDTO> appointments;
     private boolean provider = false;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public boolean isProvider() {
-        return provider;
-    }
-
-    public void setProvider(boolean provider) {
-        this.provider = provider;
-    }
-
-    public AvatarDTO getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(AvatarDTO avatar) {
-        this.avatar = avatar;
-    }
-
-    public List<Appointment> getAppointments() {
-        return appointments;
-    }
-
-    public void setAppointments(List<Appointment> appointments) {
-        this.appointments = appointments;
-    }
 
     public String toJson(){
         return "{\n" +

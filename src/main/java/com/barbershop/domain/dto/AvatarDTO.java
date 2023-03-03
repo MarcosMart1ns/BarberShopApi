@@ -1,7 +1,12 @@
 package com.barbershop.domain.dto;
 
+import lombok.Builder;
+import lombok.Data;
+
 import java.io.Serializable;
 
+@Data
+@Builder
 public class AvatarDTO implements Serializable {
 
     private long id;
@@ -9,30 +14,6 @@ public class AvatarDTO implements Serializable {
     private String filename;
 
     private String path;
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getFilename() {
-        return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
 
     public String toJson() {
         return "{\n" +
