@@ -3,8 +3,11 @@ package com.barbershop.domain.entities;
 //TODO: adicionar spring validator starter
 
 import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.CascadeType;
@@ -18,6 +21,9 @@ import java.util.List;
 @Entity
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class User {
 
     @Id
@@ -42,9 +48,5 @@ public class User {
 
     @NotNull
     boolean provider = false;
-
-
-    public User() {
-    }
 
 }

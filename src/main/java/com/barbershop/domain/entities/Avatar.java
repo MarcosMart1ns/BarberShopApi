@@ -20,6 +20,4 @@ public class Avatar {
 
     private String path;
 
-    public Avatar() {
-    }
 }
